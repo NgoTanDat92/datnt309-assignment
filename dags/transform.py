@@ -21,7 +21,7 @@ def modified_genrescolumn(genres_str):
 
 #Read and transform data column
 #Read data
-df = pd.read_csv(r"/opt/airflow/data/Top_Anime_data.csv")
+df = pd.read_csv(r"/opt/airflow/input/Top_Anime_data.csv")
 
 #Transform English column
 df = df.rename(columns={'English': 'Name'})
@@ -43,6 +43,6 @@ selected_columns = ["Rank","Score","Popularity", "Members", "Name", "Genres", "T
 selected_df = df[selected_columns]
 
 #Save new Dataframe to csv file
-selected_df.to_csv(r'/opt/airflow/data/Top_Anime_data_output.csv', index=False)
+selected_df.to_csv(r'/opt/airflow/output/Top_Anime_data_output.csv', index=False)
 
 
