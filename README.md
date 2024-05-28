@@ -21,7 +21,7 @@ mkdir -p ./dags ./logs ./plugins ./config ./input ./output
 echo -e "AIRFLOW_UID=$(id -u)" > .env
 ```
 2. Open dag.py, change the name dest_bucket "datnt309" to your dest_bucket name
-```bash
+```py
 upload_task = LocalFilesystemToS3Operator(
     task_id='upload_anime_modified_csv',
     filename=r'/opt/airflow/output/Top_Anime_data_output.csv',
