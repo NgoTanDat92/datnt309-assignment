@@ -17,7 +17,7 @@ git clone https://github.com/NgoTanDat92/datnt309-assignment
 ```
 2. In this datnt309-assignment folder, run this command:
 ```bash
-mkdir -p ./dags ./logs ./plugins ./config ./input ./ouput
+mkdir -p ./dags ./logs ./plugins ./config ./input ./output
 echo -e "AIRFLOW_UID=$(id -u)" > .env
 ```
 2. Open dag.py, change the name dest_bucket "datnt309" to your dest_bucket name
