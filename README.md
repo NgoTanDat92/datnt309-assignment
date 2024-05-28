@@ -43,9 +43,9 @@ upload_task = LocalFilesystemToS3Operator(
 ```
 6. Set connection to AWS S3
 ![image alt text](<Connection.PNG>)
-1. AWS Access Key ID = <your_AWS_Access_Key_ID>
-2. AWS Secret Access Key = <your_AWS_Secret_Access_Key>
-3. Extra = <your_AWS_session_token> 
+   AWS Access Key ID = <your_AWS_Access_Key_ID>
+   AWS Secret Access Key = <your_AWS_Secret_Access_Key>
+   Extra = <your_AWS_session_token> 
 
 
 
