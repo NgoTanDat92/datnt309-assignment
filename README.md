@@ -20,12 +20,24 @@ git clone https://github.com/NgoTanDat92/datnt309-assignment
 mkdir -p ./dags ./logs ./plugins ./config ./input ./ouput
 echo -e "AIRFLOW_UID=$(id -u)" > .env
 ```
-3. Build and start all services on Docker
+3. Build and start all services of airflow on Docker
 ```bash
 docker compose up
 ```
 4. Navigate to http://localhost:8080/home and login with username: airflow and password: airflow
-5. Setting connection to AWS S3
+5. Change the name dest_bucket datnt309 to your dest_bucket
+```bash
+upload_task = LocalFilesystemToS3Operator(
+    task_id='upload_anime_modified_csv',
+    filename=r'/opt/airflow/output/Top_Anime_data_output.csv',
+    dest_key='Top_Anime_data_output.csv',
+    dest_bucket='datnt309',
+    aws_conn_id='aws_connection',
+    replace=True,
+    dag=dag,
+)
+```
+6. Set connection to AWS S3
 
 
 
