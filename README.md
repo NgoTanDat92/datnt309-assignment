@@ -20,16 +20,7 @@ git clone https://github.com/NgoTanDat92/datnt309-assignment
 mkdir -p ./dags ./logs ./plugins ./config ./input ./ouput
 echo -e "AIRFLOW_UID=$(id -u)" > .env
 ```
-3. Build and start all services of airflow on Docker
-```bash
-docker compose up
-```
-4. Navigate to http://localhost:8080/home and login with username: airflow and password: airflow
-```bash
-_AIRFLOW_WWW_USER_USERNAME: ${_AIRFLOW_WWW_USER_USERNAME:-airflow}
-_AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-airflow}
-```
-5. Change the name dest_bucket "datnt309" to your dest_bucket
+3. Change the name dest_bucket "datnt309" to your dest_bucket name
 ```bash
 upload_task = LocalFilesystemToS3Operator(
     task_id='upload_anime_modified_csv',
@@ -41,11 +32,21 @@ upload_task = LocalFilesystemToS3Operator(
     dag=dag,
 )
 ```
+4. Build and start all services of airflow on Docker
+```bash
+docker compose up
+```
+5. Navigate to http://localhost:8080/home and login with username: airflow and password: airflow
+```bash
+_AIRFLOW_WWW_USER_USERNAME: ${_AIRFLOW_WWW_USER_USERNAME:-airflow}
+_AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-airflow}
+```
 6. Set connection to AWS S3
 ![image alt text](<Connection.PNG>)
 - AWS Access Key ID = <your_AWS_Access_Key_ID>
 - AWS Secret Access Key = <your_AWS_Secret_Access_Key>
-- Extra = <your_AWS_session_token> 
+- Extra = <your_AWS_session_token>
+7. Run "etl_anime_data" dag name and see the file ouput in your AWS S3
 
 
 
