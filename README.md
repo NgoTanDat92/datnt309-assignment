@@ -38,7 +38,7 @@ upload_task = LocalFilesystemToS3Operator(
 )
 ```
 6. Set connection to AWS S3
-
+![image alt text](<Connection.PNG>)
 
 
 
