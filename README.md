@@ -20,7 +20,7 @@ git clone https://github.com/NgoTanDat92/datnt309-assignment
 mkdir -p ./dags ./logs ./plugins ./config ./input ./ouput
 echo -e "AIRFLOW_UID=$(id -u)" > .env
 ```
-3. Change the name dest_bucket "datnt309" to your dest_bucket name
+2. Open dag.py, change the name dest_bucket "datnt309" to your dest_bucket name
 ```bash
 upload_task = LocalFilesystemToS3Operator(
     task_id='upload_anime_modified_csv',
