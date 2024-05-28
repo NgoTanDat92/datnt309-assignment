@@ -17,7 +17,7 @@ default_args = {
 }
 
 dag = DAG(
-    dag_id='dag',
+    dag_id='etl_anime_data',
     default_args=default_args,
     description='A DAG to process anime data',
     schedule_interval=None,
