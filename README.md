@@ -1,4 +1,4 @@
-# PROJECT: DATA PIPELINES WITH AIRFLOW ON DOCKER
+# PROJECT: DATA PIPELINES WITH AIRFLOW
 1. Download Top Anime Dataset 2024 on Kaggle and save to local folder
 2. Transform Data by Python
 3. Upload to AWS S3
@@ -25,7 +25,11 @@ echo -e "AIRFLOW_UID=$(id -u)" > .env
 docker compose up
 ```
 4. Navigate to http://localhost:8080/home and login with username: airflow and password: airflow
-5. Change the name dest_bucket datnt309 to your dest_bucket
+```bash
+_AIRFLOW_WWW_USER_USERNAME: ${_AIRFLOW_WWW_USER_USERNAME:-airflow}
+_AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-airflow}
+```
+5. Change the name dest_bucket "datnt309" to your dest_bucket
 ```bash
 upload_task = LocalFilesystemToS3Operator(
     task_id='upload_anime_modified_csv',
@@ -39,6 +43,9 @@ upload_task = LocalFilesystemToS3Operator(
 ```
 6. Set connection to AWS S3
 ![image alt text](<Connection.PNG>)
+1. AWS Access Key ID = <your_AWS_Access_Key_ID>
+2. AWS Secret Access Key = <your_AWS_Secret_Access_Key>
+3. Extra = <your_AWS_session_token> 
 
 
 
